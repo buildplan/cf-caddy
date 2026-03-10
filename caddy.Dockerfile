@@ -20,7 +20,7 @@ RUN go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
 WORKDIR /app
 
 # 3. Build with Cross-Compilation Support
-RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} xcaddy build v${CADDY_VERSION} \
+RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} GOFLAGS="-s -w" xcaddy build v${CADDY_VERSION} \
     --output /go/bin/caddy \
     --with github.com/caddy-dns/cloudflare@v${CF_VERSION} \
     --with github.com/WeidiDeng/caddy-cloudflare-ip
