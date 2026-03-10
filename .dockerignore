@@ -1,0 +1,7 @@
+LICENCE
+README.md 
+renovate.json
+.gitignore
+.github/*
+.env*
+.dockerignore
